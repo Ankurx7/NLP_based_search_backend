@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+motor
+elasticsearch[async]
+python-dotenv
+spacy
+sentence-transformers
+scikit-learn
+pandas
+numpy
+transformers
+torch
