@@ -8,6 +8,7 @@ import spacy
 from typing import Dict, List, Optional, Any
 import uvicorn
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -18,6 +19,14 @@ except OSError:
     nlp = None
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"] ,
+    allow_headers=["*"] ,
+)
 
 mongo_client = None
 es_client = None
